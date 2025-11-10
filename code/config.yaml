@@ -1,0 +1,39 @@
+# Configuration for the E-Commerce Price Prediction Pipeline
+
+project_name: "SmartProductPricing"
+run_name: "efficientnet_b4-bert-base-run-1"
+
+paths:
+  train_csv: "data/train.csv"
+  test_csv: "data/test.csv"
+  image_dir_train: "data/images/train/"
+  image_dir_test: "data/images/test/"
+  model_path: "outputs/price_predictor.pth"
+  submission_path: "outputs/submission.csv"
+
+model:
+  vision_encoder_name: "efficientnet_b4" # Options: efficientnet_b4, resnet50, etc.
+  text_encoder_name: "bert-base-uncased"
+  # vision_feature_dim and text_feature_dim are now handled automatically
+  dropout: 0.35
+
+data:
+  image_size: 384
+  max_text_len: 256
+  val_split_ratio: 0.15
+
+training:
+  batch_size: 32
+  epochs: 20
+  warmup_epochs: 2
+  patience: 5
+  lr_vision: 1e-5
+  lr_text: 2e-5
+  lr_head: 1e-4
+  weight_decay: 1e-3
+
+system:
+  device: "auto" # "auto", "cuda", or "cpu"
+  seed: 2024
+  num_workers: 4
+  use_amp: true # Automatic Mixed Precision
