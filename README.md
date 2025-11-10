@@ -174,15 +174,3 @@ The multimodal approach with differential learning rates and careful data augmen
 * PyTorch and torchvision teams
 * Weights & Biases for experiment tracking tools
 
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 📧 Contact
-
-For questions or collaboration opportunities, feel free to reach out:
-- GitHub: [@CoderXAyush](https://github.com/CoderXAyush)
-
----
-
-**Note:** This solution was developed for educational purposes as part of the Amazon ML Challenge 2025.
